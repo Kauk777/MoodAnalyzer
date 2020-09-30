@@ -6,22 +6,18 @@ import org.junit.Before;
 
 public class MoodAnalyserTest 
 {
-	MoodAnalyser moodAnalyser=null;
-	
-	@Before
-    public void initialize() {
-    	moodAnalyser=new MoodAnalyser();
-    }
 	
 	@Test
 	public void givenMessage_WhenSad_ShouldReturnSad() {
-		String mood = moodAnalyser.analyseMood("I am in sad mood");
+		MoodAnalyser moodAnalyser=new MoodAnalyser("I am in sad mood");
+		String mood = moodAnalyser.analyseMood();
 		Assert.assertEquals("SAD", mood);
 	 }
 	
 	@Test
 	public void givenMessage_WhenNotSad_ShouldReturnHappy() {
-		String mood = moodAnalyser.analyseMood("I am in any mood");
+		MoodAnalyser moodAnalyser=new MoodAnalyser("I am in any mood");
+		String mood = moodAnalyser.analyseMood();
 		Assert.assertEquals("HAPPY", mood);
 	 }
 	    
